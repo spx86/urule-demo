@@ -40,14 +40,15 @@ mvn test
 4. 打开浏览器访问 http://{Your IP}:8090/urule/ 试试吧
 
 5. 如果需要测试调用服务，运行edas-rule-client的EdasRuleClientApplication启动类
+```
 #编译
 mvn compile
 #运行测试
 mvn test
 ```
-5.edas-rule-server页面创建知识包等,edas/user_package
+6. edas-rule-server页面创建知识包等,edas/user_package
 
-6.使用Http请求的工具类，如Postman 调用http://{Your IP}:8787/rule/ageRule + 传参
+7. 使用Http请求的工具类，如Postman 调用http://{Your IP}:8787/rule/ageRule + 传参
 
 # 前端 
 urule-console-js模块为Urule前端源码部分！温馨提醒：urule采用react技术开发，如果要改造 找懂react的人弄吧 哈哈！
