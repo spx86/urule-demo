@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.sundun</groupId>
+		<artifactId>edas-rule</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>edas-rule-client</artifactId>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.sundun</groupId>
+			<artifactId>edas-rule-base</artifactId>
+			<version>${project.parent.version}</version>
+			<scope>system</scope>
+        	<systemPath>/root/.m2/repository/com/sundun/edas-rule-base/1.0.0/edas-rule-base-1.0.0.jar</systemPath>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-jdk14</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
