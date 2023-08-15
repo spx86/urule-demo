@@ -19,10 +19,5 @@ public class URuleServletRegistration {
 	public ServletRegistrationBean registerIndexServlet(){
 		return new ServletRegistrationBean(new IndexServlet(),"/");
 	}
-
-	@Bean
-	public ServletRegistrationBean registerHttpServlet(){
-		return new ServletRegistrationBean(new IndexServlet(),"/rule/*");
-	}
 }
 
