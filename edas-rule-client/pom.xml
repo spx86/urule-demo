@@ -13,8 +13,6 @@
 			<groupId>com.sundun</groupId>
 			<artifactId>edas-rule-base</artifactId>
 			<version>${project.parent.version}</version>
-			<scope>system</scope>
-        	<systemPath>/root/.m2/repository/com/sundun/edas-rule-base/1.0.0/edas-rule-base-1.0.0.jar</systemPath>
 			<exclusions>
 				<exclusion>
 					<groupId>org.slf4j</groupId>
@@ -30,6 +28,22 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<phase>test</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>com.bstek.EdasRuleClientApplication</mainClass>
+				</configuration>
+   			</plugin>
 		</plugins>
 	</build>
 </project>
