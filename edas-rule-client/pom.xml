@@ -13,8 +13,6 @@
 			<groupId>com.sundun</groupId>
 			<artifactId>edas-rule-base</artifactId>
 			<version>${project.parent.version}</version>
-			<scope>system</scope>
-        	<systemPath>/root/.m2/repository/com/sundun/edas-rule-base/1.0.0/edas-rule-base-1.0.0.jar</systemPath>
 			<exclusions>
 				<exclusion>
 					<groupId>org.slf4j</groupId>
