@@ -26,7 +26,7 @@ mvn install
 
 3. 打开浏览器访问 http://{Your IP}:8090/urule/ 试试吧
 
-4. edas-rule-server页面创建知识包等,edas/user_package
+4. 测试之前需要创建相应的知识包，规则等，edas-rule-server页面创建知识包等,edas/user_package
 
 5. 如果需要测试调用服务，使用Http请求的工具类，如Postman 调用http://{Your IP}:8787/rule/ageRule + 传参
 
