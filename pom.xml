@@ -144,7 +144,7 @@
 
 	<modules>
 		<module>edas-rule-base</module>
-		<module>edas-rule-client</module>
 		<module>edas-rule-server</module>
+		<module>edas-rule-client</module>
 	</modules>
 </project>
