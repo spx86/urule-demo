@@ -20,19 +20,19 @@ public class EdasRuleClientApplication {
 	public static void main(String[] args) throws IOException {
 		ApplicationContext ctx = SpringApplication.run(EdasRuleClientApplication.class, args);
 		
-		//创建一个KnowledgeSession对象
-        KnowledgeService knowledgeService = (KnowledgeService) ctx.getBean(KnowledgeService.BEAN_ID);
-        KnowledgePackage knowledgePackage = knowledgeService.getKnowledge("test/202308080002");
-        KnowledgeSession session = KnowledgeSessionFactory.newKnowledgeSession(knowledgePackage);
+	// 	//创建一个KnowledgeSession对象
+    //     KnowledgeService knowledgeService = (KnowledgeService) ctx.getBean(KnowledgeService.BEAN_ID);
+    //     KnowledgePackage knowledgePackage = knowledgeService.getKnowledge("test/202308080002");
+    //     KnowledgeSession session = KnowledgeSessionFactory.newKnowledgeSession(knowledgePackage);
 
-        Map<String, Object> param = new HashMap<>();
-        param.put("age", 22);
-        String result = new String();
-        session.insert(result);
-        session.fireRules(param);
+    //     Map<String, Object> param = new HashMap<>();
+    //     param.put("age", 22);
+    //     String result = new String();
+    //     session.insert(result);
+    //     session.fireRules(param);
 
-       // Integer result = (Integer) session.getParameter("age");
-        System.out.println("年龄：" + session.getParameter("age"));
-        System.out.println("结果：" + session.getParameter("result"));
+    //    // Integer result = (Integer) session.getParameter("age");
+    //     System.out.println("年龄：" + session.getParameter("age"));
+    //     System.out.println("结果：" + session.getParameter("result"));
 	}
 }
