@@ -19,6 +19,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 import org.apache.commons.lang.StringUtils;
 
@@ -405,5 +408,29 @@ public class DateAction {
 		int month2=c1.get(Calendar.MONTH);
 		int result=12*(year1-year2)+(month1-month2);
 		return result;
+	}
+	@ActionMethod(name="日期范围")
+	@ActionMethodParameter(names={"开始日期", "结束日期", "待比较日期"})
+	public boolean isDateInRange(Date startDate, Date endDate, Date compared_time){
+		return compared_time.compareTo(startDate) >= 0 && compared_time.compareTo(endDate) <= 0;
+	}
+
+	@ActionMethod(name="时区处理")
+	@ActionMethodParameter(names={"待转换时区时间", "当前时区", "待转换时区"})
+	public Date timeZoneConversion(Date conversionDate, String currentTimeZone, String awaitTimeZone){
+		if (conversionDate == null || currentTimeZone == null || awaitTimeZone == null) {
+            // 处理参数为空的情况，您可以根据实际需求进行逻辑处理
+            return null;
+        }
+        // 将Date对象转换为ZonedDateTime，并设置其时区为当前时区
+		ZonedDateTime sourceZonedDateTime = conversionDate.toInstant().atZone(ZoneId.of(currentTimeZone));
+
+		// 将ZonedDateTime转换为目标时区的ZonedDateTime
+		ZonedDateTime targetZonedDateTime = sourceZonedDateTime.withZoneSameInstant(ZoneId.of(awaitTimeZone));
+
+		// 将ZonedDateTime转换为Date对象
+		Date resultDate = Date.from(targetZonedDateTime.toInstant());
+
+        return resultDate;
 	}
 }

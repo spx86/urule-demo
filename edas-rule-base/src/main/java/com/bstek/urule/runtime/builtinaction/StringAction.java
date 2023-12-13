@@ -140,4 +140,10 @@ public class StringAction {
 		}
 		return list;
 	}
+	@ActionMethod(name="字符串拼接")
+	@ActionMethodParameter(names={"字符串1","字符串2"})
+	public String stringSplice(String str1, String str2){
+		return String.format("%s %s", str1, str2);
+	}
+
 }
