@@ -146,4 +146,11 @@ public class StringAction {
 		return String.format("%s %s", str1, str2);
 	}
 
+	@ActionMethod(name="字符串比较")
+	@ActionMethodParameter(names={"字符串1", "字符串2"})
+	public boolean stringCmp(String str1, String str2){
+		return str1.equalsIgnoreCase(str2);
+	}
+
+	
 }

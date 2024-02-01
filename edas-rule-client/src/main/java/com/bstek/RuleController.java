@@ -25,12 +25,8 @@ import com.bstek.urule.runtime.response.RuleExecutionResponse;
 import com.bstek.urule.runtime.service.KnowledgeService;
 
 @RestController
-<<<<<<< HEAD
-//@CrossOrigin(origins = {"http://106.52.244.132:8888")
+// //@CrossOrigin(origins = {"http://106.52.244.132:8888")
 @CrossOrigin(origins = {"*"})
-=======
-@CrossOrigin(origins = "http://106.52.244.132:8888")
->>>>>>> 40ee03a26840f4c0c80b9bffe6478fab52413687
 @RequestMapping("rule")
 
 public class RuleController {

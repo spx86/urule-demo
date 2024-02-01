@@ -22,6 +22,9 @@ import java.util.Date;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
 
 import org.apache.commons.lang.StringUtils;
 
@@ -432,5 +435,22 @@ public class DateAction {
 		Date resultDate = Date.from(targetZonedDateTime.toInstant());
 
         return resultDate;
+	}
+
+	@ActionMethod(name="周期判断")
+	@ActionMethodParameter(names={"开始时间", "截止时间", "周期（天）"})
+	public boolean isInperiodDays(Date startDate, Date endDate, int period){
+		LocalDate startLocalDate = startDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        LocalDate endLocalDate = endDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+		if (startLocalDate.isAfter(endLocalDate)) {
+            // 开始时间晚于结束时间，无效范围
+            System.out.println("无效的时间范围");
+            return false;
+        }
+        // 计算天数差
+        long daysBetween = ChronoUnit.DAYS.between(startLocalDate, endLocalDate);
+
+        // 判断天数差是否在周期内
+        return daysBetween <= period;
 	}
 }
